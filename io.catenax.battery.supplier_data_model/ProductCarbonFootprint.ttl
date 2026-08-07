@@ -75,8 +75,9 @@
    [ samm:property :pcfCo2eq; samm:payloadName "PcfCo2eq" ] 
    [ samm:property :referenceImpactUnitForCalculation; samm:payloadName "ReferenceImpactUnitForCalculation" ] 
    [ samm:property :quantityOfMeasureForCalculation; samm:payloadName "QuantityOfMeasureForCalculation" ] 
-   [ samm:property :performanceClass; samm:payloadName "PerformanceClass" ] 
-   [ samm:property :webLinkToPublicCarbonFootprintStudy; samm:payloadName "WebLinkToPublicCarbonFootprintStudy" ]
+   [ samm:property :lifeCyclePhases; samm:optional true; samm:payloadName "LifeCyclePhases" ] 
+   [ samm:property :performanceClass; samm:optional true; samm:payloadName "PerformanceClass" ] 
+   [ samm:property :webLinkToPublicCarbonFootprintStudy; samm:optional true; samm:payloadName "WebLinkToPublicCarbonFootprintStudy" ]
    ) .
  
 :pcfCo2eq a samm:Property ;
@@ -106,6 +107,15 @@
    samm:characteristic pcf:QuantityOfMeasureForCalculationCharacteristic ;
    samm:exampleValue "5.0"^^xsd:double .
   
+:lifeCyclePhases a samm:Property ;
+   samm:preferredName "life cycle phases"@en ;
+   samm:preferredName "Lebenszyklusphasen"@de ;
+   samm:description "Life cycle stages of the product according to the quantification requirements of the standard to which the PCF carbon footprint statement refers.\n\nThe string value in the value list is based on DIN DKE SPEC 99100: 'A1 - raw material supply (and upstream production)' (6.3.5 required lify cycle mapping), 'A3 - production' (6.3.4 Contribution of main product production/manufacturing lifecycle stage), 'A4 - transport to final destination' (6.3.5 Contribution of distribution lifecycle stage), 'C3 - recycling, waste treatment' (6.3.6 Contribution of end of life and recycling lifecycle stage)\n\nPlease note that the model should always contain at least one Product Carbon Footprint entry that reflects the total PCF value (including all life cycle phases) of the battery."@en ;
+   samm:see <urn:irdi:0173-1%2302-ABG858%23003> ;
+   samm:see <urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#lifeCyclePhases> ;
+   samm:characteristic pcf:LifeCyclePhaseSet ;
+   samm:exampleValue pcf:C4 . 
+
 :performanceClass a samm:Property ;
   samm:preferredName "carbon footprint performance class"@en ;
   samm:description "The battery passport must include the carbon footprint performance class in accordance with the entry into force of the delegated and implementing acts on the carbon footprint performance classes per Article7 of the Battery Regulation.\n\n DIN DKE Spec 99100 chapter reference: 6.3.7 "@en ;
