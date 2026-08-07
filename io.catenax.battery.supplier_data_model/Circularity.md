@@ -20,7 +20,10 @@ SupplierCircularity
  │   ├─ PreConsumerShare              (0–100 % of the material)
  │   └─ PostConsumerShare             (0–100 % of the material)
  ├─ RenewableContent                  (mandatory)
- └─ SafetyMeasures                    (optional)
-     ├─ SafetyInstructions[]           (optional)
-     └─ ExtinguishingAgents[]          (optional)
+ ├─ DismantlingAndRemovalInformation  (optional)
+ ├─ SparePartSources                  (optional)
+ ├─ SafetyMeasures                    (optional)
+ │   ├─ SafetyInstructions[]
+ │   └─ ExtinguishingAgents[]
+ └─ EndOfLifeInformation              (optional)
 ```
