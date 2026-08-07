@@ -21,6 +21,7 @@ CarbonFootprintBattery
      ├─ PcfCo2eq                                  (note: "Full Product PCF")
      ├─ ReferenceImpactUnitForCalculation
      ├─ QuantityOfMeasureForCalculation
+     ├─ LifeCyclePhases                           (optional)
      ├─ PerformanceClass                          (optional)
      └─ WebLinkToPublicCarbonFootprintStudy       (optional)
 ```
