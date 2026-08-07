@@ -30,7 +30,7 @@ SupplierNameplate
  ├─ DateOfPuttingIntoService               (optional)
  ├─ BatteryStatus                          (optional, payload "LifeCycleStage")
  ├─ OperatorIdentifier                     (optional)
- ├─ ManufacturerName                       (mandatory, BPNL)
+ ├─ ManufacturerName                       (mandatory, relevant for suppliers)
  ├─ UniqueFacilityIdentifier               (optional)
  ├─ AddressInformation                     (optional)
  ├─ Markings                               (optional)
