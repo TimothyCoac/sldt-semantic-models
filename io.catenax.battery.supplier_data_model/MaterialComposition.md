@@ -4,8 +4,8 @@ deletions are **marked** (`#to be deleted`)
 
 | IDTA 02035-6 attribute                                                                                 | Our model                                                           | Reason / status                                                                                                 |
 | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| BatteryChemistry (ShortName, ClearName)                                                                | kept, mandatory — both sub-fields**marked "#to be deleted"** | purely for battery manufacturers                                                                                |
-| BatteryMaterials — batteryMaterialLocation                                                            | kept, mandatory —**marked "#to be deleted"**                 | Deletion under discussion: option "entire material" / "not applicable" to be checked with the chemical industry |
+| BatteryChemistry (ShortName, ClearName)                                                                | kept, optianal — both sub-fields**marked "#to be deleted"** | purely for battery manufacturers                                                                                |
+| BatteryMaterials — batteryMaterialLocation                                                            | kept, optional —**marked "#to be deleted"**                 | Deletion under discussion: option "entire material" / "not applicable" to be checked with the chemical industry |
 | BatteryMaterials — batteryMaterialIdentifier (CAS number), batteryMaterialName, isCriticalRawMaterial | kept, mandatory                                                     | Unchanged from IDTA                                                                                             |
 | BatteryMaterials — batteryMaterialMass                                                                | kept, optional                                                      | Optional in IDTA as well                                                                                        |
 | HazardousSubstances — hazardousSubstanceName, hazardousSubstanceIdentifier                            | kept, mandatory                                                     | Unchanged from IDTA                                                                                             |
@@ -19,10 +19,10 @@ deletions are **marked** (`#to be deleted`)
 ```
 MaterialComposition
  ├─ BatteryChemistry
- │   ├─ ShortName                                  #to be deleted
- │   └─ ClearName                                  #to be deleted
+ │   ├─ ShortName                                  (optional)   #to be deleted
+ │   └─ ClearName                                  (optional)   #to be deleted
  ├─ BatteryMaterials[]        (one entry per material)
- │   ├─ batteryMaterialLocation                    #to be deleted
+ │   ├─ batteryMaterialLocation                    (optional)   #to be deleted
  │   ├─ batteryMaterialIdentifier (CAS number)
  │   ├─ batteryMaterialName
  │   ├─ batteryMaterialMass                        (optional)
