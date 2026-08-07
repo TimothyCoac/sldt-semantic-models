@@ -9,7 +9,7 @@
 | referenceImpactUnitForCalculation             | kept, mandatory                                       | Unchanged from IDTA                                                                                                                                                          |
 | quantityOfMeasureForCalculation               | kept, mandatory                                       | Unchanged from IDTA                                                                                                                                                          |
 | lifeCyclePhases                               | kept, optional                                    | OEMs recommended to keep "Life cycle stages in", however, discussions still ongoing on the differences between PCF section in Battery pass and PCF industry standard from Catena-X. |
-| performanceClass                              | kept, mandatory                                       | Unchanged from IDTA                                                                                                                                                          |
+| performanceClass                              | kept, optional                                       | Optional as relevance for suppliers along the value chain is difficult to determine or simply not relevant                                                                                                                                                           |
 | webLinkToPublicCarbonFootprintStudy           | kept, optional | Optional as relevance for suppliers along the value chain is difficult to determine                                                                                                                                               |
 
 ## Simplified Model
@@ -21,6 +21,6 @@ CarbonFootprintBattery
      ├─ PcfCo2eq                                  (note: "Full Product PCF")
      ├─ ReferenceImpactUnitForCalculation
      ├─ QuantityOfMeasureForCalculation
-     ├─ PerformanceClass
+     ├─ PerformanceClass                          (optional)
      └─ WebLinkToPublicCarbonFootprintStudy       (optional)
 ```
