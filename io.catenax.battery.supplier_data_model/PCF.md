@@ -8,9 +8,9 @@
 | pcfCo2eq                                      | kept, mandatory                                       | Unchanged. Board note: "Full Product PCF"                                                                                                                                    |
 | referenceImpactUnitForCalculation             | kept, mandatory                                       | Unchanged from IDTA                                                                                                                                                          |
 | quantityOfMeasureForCalculation               | kept, mandatory                                       | Unchanged from IDTA                                                                                                                                                          |
-| lifeCyclePhases                               | **removed**                                     | In-file comment: only one cradle-to-gate PCF is relevant for the OEM, which will be mapped into "A1 – raw material supply". Miro comment: "Deleted! Only full PCF relevant" |
+| lifeCyclePhases                               | kept, optional                                    | OEMs recommended to keep "Life cycle stages in", however, discussions still ongoing on the differences between PCF section in Battery pass and PCF industry standard from Catena-X. |
 | performanceClass                              | kept, mandatory                                       | Unchanged from IDTA                                                                                                                                                          |
-| webLinkToPublicCarbonFootprintStudy           | kept, mandatory —**deletion under discussion** | Miro comment: "To be deleted?"                                                                                                                                               |
+| webLinkToPublicCarbonFootprintStudy           | kept, optional | Optional as relevance for suppliers along the value chain is difficult to determine                                                                                                                                               |
 
 ## Simplified Model
 
