@@ -22,5 +22,5 @@ CarbonFootprintBattery
      ├─ ReferenceImpactUnitForCalculation
      ├─ QuantityOfMeasureForCalculation
      ├─ PerformanceClass
-     └─ WebLinkToPublicCarbonFootprintStudy       #to be deleted?
+     └─ WebLinkToPublicCarbonFootprintStudy       (optional)
 ```
