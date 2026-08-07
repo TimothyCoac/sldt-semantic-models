@@ -15,12 +15,12 @@
 
 ```
 SupplierCircularity
- ├─ RecycledContentInformation[]      (mandatory, one entry per material)
+ ├─ RecycledContentInformation[]      (mandatory)
  │   ├─ RecycledMaterial              (Cobalt | Nickel | Lithium | Lead)
  │   ├─ PreConsumerShare              (0–100 % of the material)
  │   └─ PostConsumerShare             (0–100 % of the material)
- ├─ RenewableContent                  (optional, 0–100 % of total mass)
- └─ SafetyMeasures                    (optional, referenced from IDTA as-is:
-     ├─ SafetyInstructions[]           document identifiers → Part 2
-     └─ ExtinguishingAgents[]          fire classes)
+ ├─ RenewableContent                  (mandatory)
+ └─ SafetyMeasures                    (optional)
+     ├─ SafetyInstructions[]           (optional)
+     └─ ExtinguishingAgents[]          (optional)
 ```
