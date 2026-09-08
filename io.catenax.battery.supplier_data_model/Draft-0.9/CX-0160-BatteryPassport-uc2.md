@@ -1,6 +1,6 @@
 # CX-0160-X Supplier Data Management: Provisioning of Battery Passport Relevant Data by Tier-1 Suppliers
 ## ABSTRACT
-This standard is an extension of the CX-0160 Battery Passport Data Management standards. It specifies how Tier-1 suppliers provide Battery Passport relevant information to battery producers within the Catena-X ecosystem. The standard applies to suppliers that provide products directly to battery producers, including:
+This standard is an extension of the CX-0160 Battery Passport Data Management standards. It specifies how suppliers provide Battery Passport relevant information to battery producers within the Catena-X ecosystem. The standard applies to suppliers that provide products to battery producers, including:
 - Material Suppliers
 - Component Suppliers
 - Cell Producers
@@ -15,16 +15,17 @@ This standard defines:
 - Mandatory and optional information requirements by supplier role
 ---
 ## FOR WHOM IS THE STANDARD DESIGNED
-This standard is intended for organizations supplying materials, components, or cells directly to battery producers.
+This standard is intended for organizations supplying materials, components, or cells to battery producers.
 ### Data Providers
-Data Providers are Tier-1 suppliers that contribute Battery Passport relevant information to battery producers.
-It should be noted that the battery production supply chain may involve a wider range of supplier types than the three categories described above. Nevertheless, during the development of this standard, consideration was limited to these three roles, due to availability and interest of the participants. The standard may apply to additional Tier-1s as well after careful consideration.
+Data Providers are actors in the battery value chain that supply Battery Passport-relevant information to other actors. A Data Provider may be any organization that holds and shares relevant data, regardless of its position in the value chain.
+It should be noted that the battery production supply chain may involve a wider range of supplier types than the three categories described above. Nevertheless, during the development of this standard, consideration was limited to these three roles, due to availability and interest of the participants.
   
 ### Data Consumers
-Data Consumers are battery producers that collect supplier information for Battery Passport creation and regulatory compliance.
+Data Consumers are actors in the battery value chain that request, receive, and use supplier information for Battery Passport creation, regulatory compliance, or any organization that requires Battery Passport-relevant data from another actor in the value chain.
 Examples include:
 - Battery Manufacturers
 - Battery Producers acting as Economic Operators under the EU Battery Regulation
+- Tier-1 suppliers collecting data from material producers or other upstream suppliers
 ---
 
 # 1 INTRODUCTION
@@ -46,9 +47,9 @@ _This section is non-normative_
 This standard is relevant for the following Catena-X roles:
 
 ### Data Provider
-A Tier-1 supplier directly supplying products to battery producers.
+An actor supplying materials or products within the battery value chain.
 ### Data Consumer
-A Battery Producer receiving supplier data contributions.
+An actor in the battery value chain that receives battery passport relevant data.
 
 This standard specifies how supplier-related Battery Passport information is modeled, provisioned, discovered and accessed within the Catena-X Dataspace.
 
@@ -77,7 +78,7 @@ The standard is not intended to be applied for:
 _This section is non-normative_
 
 The Supplier Data Model forms an upstream extension of the Catena-X Battery Passport ecosystem.
-Tier-1 suppliers provide information required by battery producers to:
+Suppliers provide information required by battery producers to:
 - Create Battery Passports.
 - To reduce manual effort from data collection.
 - Establish material and product traceability.
@@ -105,7 +106,7 @@ The key words **MUST**, **MUST NOT**, **OPTIONAL**, **RECOMMENDED**, **REQUIRED*
 
 ## 2.1 Data Provider
 
-A Data Provider is a supplier directly supplying products to a battery producer.
+A Data Provider is any actor in the battery value chain that makes Battery Passport-relevant data available to another actor. The Data Provider may be an upstream supplier, a component manufacturer, a material producer, or any other organization providing relevant information.
 The Data Provider:
 - MUST provide all mandatory information applicable to its supplied product.
 - MUST ensure accuracy and completeness of provided information.
@@ -115,7 +116,7 @@ The Data Provider:
 
 ## 2.2 Data Consumer
 
-A Data Consumer is a battery producer receiving supplier information.
+A Data Consumer is any actor in the battery value chain that receives Battery Passport-relevant data from another actor and uses it for passport generation, compliance, or related business processes. The Data Consumer may also act as a Data Provider in other exchanges.
 
 The Data Consumer:
 - MUST retrieve information through Catena-X compatible interfaces.
