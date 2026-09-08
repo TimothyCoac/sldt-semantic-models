@@ -22,8 +22,8 @@ Only the Supplier Nameplate submodel is mandatory. It MUST be provided by every 
 The remaining submodels (Supplier Handover Documentation, Carbon Footprint, Supplier Circularity, Material Composition) are optional. Whether they are provided, and in which scope, is subject to bilateral (B2B) agreement between Data Provider and Data Consumer.
 
 The obligation levels defined in Sections 3 to 6 (Mandatory, Conditional Mandatory, Optional, Not Applicable) refer to attributes within a submodel. They apply only once the exchange of the respective submodel has been agreed between the parties. An attribute classified as mandatory within an optional submodel is therefore only mandatory if that submodel is provided.
----
 
+---
 ## FOR WHOM IS THE STANDARD DESIGNED
 This standard is intended for organizations supplying materials, components, or cells to battery producers.
 ### Data Providers
