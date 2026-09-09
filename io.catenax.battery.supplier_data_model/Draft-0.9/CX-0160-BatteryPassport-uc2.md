@@ -1,55 +1,45 @@
-# CX-0160-X Supplier Data Management: Provisioning of Battery Passport Relevant Data by Tier-1 Suppliers
+# CX-0160-X Supplier Data Management: Provisioning of Battery Passport relevant Data
 ## ABSTRACT
-This standard is an extension of the CX-0160 Battery Passport Data Management standards. It specifies how suppliers provide Battery Passport relevant information to battery producers within the Catena-X ecosystem. The standard applies to suppliers that provide products to battery producers, including:
+This standard is an extension of the CX-0160 Battery Passport Data Management standard. It specifies how suppliers provide Battery Passport relevant information to battery producers or Tier-N suppliers within the Catena-X ecosystem. The standard applies to suppliers that provide products to battery producers, including, but not limited to:
 - Material Suppliers
 - Component Suppliers
 - Cell Producers
   
-Unlike battery producers, suppliers covered by this standard are not responsible for publishing a Battery Passport or Digital Product Passport (DPP). The purpose of this standard is to ensure that battery producers receive harmonized, machine-readable, and interoperable data contributions that can be incorporated into Battery Passport generation processes.
+Unlike battery producers, suppliers covered by this standard are not responsible for publishing a Battery Passport or Digital Product Passport (DPP). The purpose of this standard is to ensure that battery producers receive harmonized, machine-readable, and interoperable data contributions that can be incorporated into Battery Passport generation processes. It also aims at simplifying interfaces and creating a common understanding along the value chain what information are needed and how the attributes are interpreted.
 
-This standard defines:
-- Roles and responsibilities
-- Digital twins and semantic models
-- Data exchange mechanisms
-- Applicability rules
-- Mandatory and optional information requirements by supplier role
----
+
 ## DISCLAIMER
-This standard defines five submodels for the provisioning of Battery Passport relevant data by suppliers: Supplier Nameplate, Supplier Handover Documentation, Carbon Footprint, Supplier Circularity and Material Composition.
+This standard defines five submodels for the provisioning of Battery Passport relevant data by suppliers: Supplier Nameplate, Supplier Handover Documentation, Product Carbon Footprint, Supplier Circularity and Material Composition.
 
-Only the Supplier Nameplate submodel is mandatory. It MUST be provided by every supplier role covered by this standard (Material Supplier, Component Supplier, Cell Producer) to ensure compatibility with the IDTA Battery Passport submodel templates.
+Only the Supplier Nameplate submodel is mandatory. (AKE: I would disagree as discussed yesterday.) It MUST be provided by every supplier role covered by this standard (Material Supplier, Component Supplier, Cell Producer, and others) to ensure compatibility with the IDTA Battery Passport submodel templates. (AKE: Why is this relevant? The submodels are the same just with different optional/mandatory attributes. Using the nameplate datamodel will not ensure compatibility.)
 
-The remaining submodels (Supplier Handover Documentation, Carbon Footprint, Supplier Circularity, Material Composition) are optional. Whether they are provided, and in which scope, is subject to bilateral (B2B) agreement between Data Provider and Data Consumer.
+The remaining submodels (Supplier Handover Documentation, Product Carbon Footprint, Supplier Circularity, Material Composition) are optional. Whether they are provided, and in which scope, is subject to bilateral (B2B) agreement between Data Provider and Data Consumer. 
 
-The obligation levels defined in Sections 3 to 6 (Mandatory, Conditional Mandatory, Optional, Not Applicable) refer to attributes within a submodel. They apply only once the exchange of the respective submodel has been agreed between the parties. An attribute classified as mandatory within an optional submodel is therefore only mandatory if that submodel is provided.
-
----
 ## FOR WHOM IS THE STANDARD DESIGNED
-This standard is intended for organizations supplying materials, components, or cells to battery producers.
+This standard is intended for organizations supplying materials, components, or cells to battery producers and for organizations receiving such information to create the Battery Passport.
+
 ### Data Providers
-Data Providers are actors in the battery value chain that supply Battery Passport-relevant information to other actors. A Data Provider may be any organization that holds and shares relevant data, regardless of its position in the value chain.
-It should be noted that the battery production supply chain may involve a wider range of supplier types than the three categories described above. Nevertheless, during the development of this standard, consideration was limited to these three roles, due to availability and interest of the participants.
+Data Providers are actors in the battery value chain that supply Battery Passport relevant information to other actors. A Data Provider may be any organization that holds and shares relevant data, regardless of its position in the value chain.
+It should be noted that the battery production supply chain may involve a wider range of supplier types than the three categories described above. 
   
 ### Data Consumers
-Data Consumers are actors in the battery value chain that request, receive, and use supplier information for Battery Passport creation, regulatory compliance, or any organization that requires Battery Passport-relevant data from another actor in the value chain.
+Data Consumers are actors in the battery value chain that request, receive, and use supplier information for Battery Passport creation, regulatory compliance, or any organization that requires Battery Passport relevant data from another actor in the value chain.
 Examples include:
 - Battery Manufacturers
 - Battery Producers acting as Economic Operators under the EU Battery Regulation
 - Tier-1 suppliers collecting data from material producers or other upstream suppliers
----
 
 # 1 INTRODUCTION
-
 Battery Passports require information originating from multiple actors throughout the battery value chain. While battery producers remain responsible for creating and publishing Battery Passports, a substantial share of the underlying information originates from upstream suppliers. This standard establishes a mechanism for exchanging supplier-generated information through Catena-X Digital Twins and standardized semantic models.
 
 The objective is to:
+- Create a common understanding of which information is needed throughout the value chain to create Battery Passports 
+- Define standardized data models to reduce complexity, redundancy and facilitate implementation throughout the whole value chain
 - Reduce manual reporting efforts
 - Improve interoperability across the value chain
 - Support battery producers to publish DPPs
 - Enable traceable sustainability and product information exchange
 This standard does not transfer regulatory responsibility from battery producers to suppliers. Instead, it defines a common framework through which suppliers can provide the information required by battery producers to fulfil their obligations.
-
----
 
 ## 1.1 AUDIENCE & SCOPE
 
@@ -58,6 +48,7 @@ This standard is relevant for the following Catena-X roles:
 
 ### Data Provider
 An actor supplying materials or products within the battery value chain.
+
 ### Data Consumer
 An actor in the battery value chain that receives battery passport relevant data.
 
@@ -78,7 +69,7 @@ The standard is not intended to be applied for:
 
 - Publishing Battery Passports.
 - Publishing Digital Product Passports.
-- Battery producer to OEM data exchange.
+- Battery producer to OEM data exchange. (AKE: Why not? This is exactly our use case.)
 - Exchange with non-Catena-X ecosystems.
 - Provisioning of downstream Battery Passport information.
 - Dynamic product condition information occurring after handover to the battery producer.
@@ -117,11 +108,11 @@ The key words **MUST**, **MUST NOT**, **OPTIONAL**, **RECOMMENDED**, **REQUIRED*
 ## 2.1 Data Provider
 
 A Data Provider is any actor in the battery value chain that makes Battery Passport-relevant data available to another actor. The Data Provider may be an upstream supplier, a component manufacturer, a material producer, or any other organization providing relevant information.
-The Data Provider:
-- MUST provide all mandatory information applicable to its supplied product.
-- MUST ensure accuracy and completeness of provided information.
+The Data Provider: (AKE: I would delete the bullet points. No added value)
+- MUST provide all mandatory information applicable to its supplied product. (AKE: You cannot write it like this. This has 0 impact on technical implementation)
+- MUST ensure accuracy and completeness of provided information. (AKE: Is this really something we need to mention or that we can enforce?)
 - SHOULD update information when significant product changes occur.
-- MAY provide optional information when contractually agreed.
+- MAY provide optional information when contractually agreed. 
 ---
 
 ## 2.2 Data Consumer
@@ -129,27 +120,27 @@ The Data Provider:
 A Data Consumer is any actor in the battery value chain that receives Battery Passport-relevant data from another actor and uses it for passport generation, compliance, or related business processes. The Data Consumer may also act as a Data Provider in other exchanges.
 
 The Data Consumer:
-- MUST retrieve information through Catena-X compatible interfaces.
+- MUST retrieve information through Catena-X compatible interfaces. (AKE: Obvious. Preferrably reference the other Catena-X Standards which need to be followed, like CX-0002, CX-0018, CX-0151, CX-0152 etc.)
 - MAY combine information from multiple suppliers.
 - MAY enrich supplier information with additional data.
-- REMAINS RESPONSIBLE for Battery Passport creation and publication.
+- REMAINS RESPONSIBLE for Battery Passport creation and publication. (AKE: No. The consumer could also be a Tier-1 supplier which aggregates PCF values and sends it to an economic operator.)
 ---
 
 # 3 PRINCIPLES FOR DATA OBLIGATION DEFINITION
 
 _This section is normative_
 Supplier obligations differ from Battery Producer obligations because suppliers are not responsible for publishing a Battery Passport.
-Data obligations SHALL therefore be determined based on "Supplier's role" in the value chain.
+Data obligations SHALL therefore be determined based on "Supplier's role" in the value chain. (AKE: How do you define the role of a supplier within the value chain? I think this is too complicated and leaves a lot of room for excluding parties we do not know of. I would just make 2 data models. The economic operator must use the IDTA data models and all other participants who want to share information to another supplier or the economic operator, they can use the IDTA optional data models. Don't overload yourself with too much complexity.)
 
 ## 3.1 Criterion 1: Product Applicability
-A data element is mandatory only when applicable to the supplied product.
+A data element is mandatory only when applicable to the supplied product. (AKE: That cannot be technically enforced and therefore I would not define it like that. Also the interpretation of what is mandatory for a supplied product might differ between two parties. This sentence seems to specify things but it doesnt. I think this standard should be a technical standard with the focus of creation a common understanding about the attributes and the way they have to be transmitted.)
 Examples:
 - Battery Chemistry Information is relevant only for Cell Producers, as a battery chemistry name cannot be defined for individual chemical products or components supplied to a battery.
 - Location of Hazardous Substances is applicable only to Components and Cell Producers, and not to chemical products, as it is not possible to define where within a chemical product a hazardous substance is located.
 
 ---
 ## 3.2 Criterion 2: Supplier Role
-Data submission obligations depend on the supplier’s role. The table below provides an overview of which attributes are mandatory and which are optional for material suppliers, component suppliers, and cell producers.
+Data submission obligations depend on the supplier’s role. The table below provides an overview of which attributes are mandatory and which are optional for material suppliers, component suppliers, and cell producers. (AKE: Are you 100% sure this applies to those supplier types? If not, leave it flexible.)
 
 
 | Sub Model                     | Field Name                                                                  | IDTA Model Obligation | Supplier Data Model Obligation (Overall) | Material Supplier Obligation | Component Supplier Obligation | Cell Producer to Batteries Obligation | Comments                                                                                      |
@@ -199,7 +190,7 @@ Data submission obligations depend on the supplier’s role. The table below pro
 
 ---
 ## 3.3 Criterion 3: Data Ownership
-Information SHALL only be mandatory when the supplier is the authoritative source of the information.
+Information SHALL only be mandatory when the supplier is the authoritative source of the information. (AKE: Again. Nothing technical)
 Examples of supplier-owned information:
 - Product Carbon Footprint
 - Material composition
@@ -212,64 +203,16 @@ Examples of information not owned by suppliers:
 - Post-production product condition information
 ---
 
-# 4 OBLIGATION CLASSIFICATION MODEL
-_This section is normative_
-
-To maintain alignment with Catena-X and IDTA principles, data requirements within this standard SHALL be classified according to one of the obligation categories defined below. The classification determines the expected level of data provision by the respective supplier role.
-### 4.1 Obligation Categories
-| Classification | Definition |
-|----------------|------------|
-| **Mandatory** | The attribute MUST be provided by the supplier for the relevant supplier role. |
-| **Conditional Mandatory** | The attribute MUST be provided when defined applicability criteria are fulfilled, such as regulatory relevance, product characteristics, or supplier-specific responsibilities. |
-| **Optional** | The attribute MAY be provided by the supplier but is not required for conformance with this standard. |
-| **Not Applicable (N/A)** | The attribute is not relevant to the supplier role and therefore does not need to be provided. |
-
-### 4.2 Determination of Obligations
-
-The obligation level of an attribute SHALL be determined based on the following criteria:
-
-1. **Supplier Role**
-- Material Supplier
-- Component Supplier
-- Cell Producer
-2. **Product Applicability**
-- Whether the attribute is relevant to the supplied product.
-3. **Data Ownership**
-- Whether the supplier is the authoritative source of the information.
-4. **Regulatory Relevance**
-- Whether the information is required to support compliance with applicable regulations, including Regulation (EU) 2023/1542.
-### 4.3 Example Classification
-The table below illustrates how obligation levels may differ between supplier roles.
-
-| Attribute | Material Supplier | Component Supplier | Cell Producer |
-|------------|------------------|-------------------|--------------|
-| URIOfTheProduct | Mandatory | Mandatory | Mandatory |
-| Battery Chemistry | N/A | N/A | Mandatory |
-| Recycled Content | Conditional Mandatory | Conditional Mandatory | Conditional Mandatory |
-| PcfCo2eq | Mandatory | Mandatory | Mandatory |
-| End Of Life Information | Optional | Optional | Optional |
- 
-### 4.4 Use of Conditional Mandatory Attributes
-Conditional Mandatory attributes are expected to represent a significant portion of supplier-provided data because the applicability of Battery Passport information varies substantially across supplier types and products.
-Examples include:
-- Recycled content information when recycled or critical raw materials are present.
-- EU Declaration of Conformity when legally required for the supplied product.
-- Battery chemistry information when the supplied product is a battery cell.
-- Material-specific information that is only available to the supplier responsible for the material.
-This approach enables a harmonized and scalable implementation of supplier data exchange while recognizing the differing responsibilities of Material Suppliers, Component Suppliers, and Cell Producers.
-
----
-
 # 5 SEMANTIC MODELS
 _This section is normative_
-The following semantic models are supported by this standard.
+The following semantic models are supported by this standard. (AKE: There need to be links to the data models within the catena-x data models. If those models should be published in TX it should be here: https://github.com/eclipse-tractusx/sldt-semantic-models Also the urn, ttl-file, json-schema etc is missing. Someone has to create all those files and create a PR in order for Johann/TC4S to review the data models.)
 ## 5.1 Supplier Nameplate
 Supplier Nameplate contains general identification information about the supplied product and supplier.
 ### Mandatory
 - URIOfTheProduct
 - ManufacturerIdentifier
 - ManufacturerName
-### Conditional Mandatory
+### Conditional Mandatory (AKE. Rephrase.)
 - EUDeclarationOfConformity
 - SerialNumber
 - DateOfManufacture
@@ -335,18 +278,20 @@ Material Composition contains information about materials, substances, and batte
 - Hazardous Substance Location
 - Component Structure Information
 ---
-# 6 ROLE-SPECIFIC OBLIGATION PRINCIPLE
-The final obligation matrix SHALL be maintained separately and classify all data elements for the following supplier roles:
-- Material Supplier
-- Component Supplier
-- Cell Producer
-Each attribute SHALL be assigned one of the following obligation levels:
-- Mandatory
-- Conditional Mandatory
-- Optional
-- Not Applicable
 
-The obligation matrix SHALL serve as the normative reference for determining supplier-specific reporting obligations.
- 
-469
-This approach allows alignment with existing Battery Passport semantic models while ensuring that supplier obligations remain limited to information that is relevant, applicable, and owned by the supplier.
+
+AKE: 
+What's missing from my point of view:
+1. Context and architecture fit: How do you creat the twins, on what level and how does the consumer know that there is a new one to pull the data? Maybe even a sequence diagram.
+2. Conformance and proof of conformity aka CAC.md. How can 3 third party evaluate that someone (data consumer, data provider or solution provider (which has not at all been talked about) is following this standard and be certified?)
+3. List of Standards which need to be followed like e.g.
+CX-0001 Participant Agent Registration v1.2
+CX-0018 Dataspace Connectivity v4.1.1
+CX-0127 Industry Core: Part Instance v2.0.2
+CX-0151 Industry Core: Basics v1.0.0
+CX-0152 Policy Constraints for Data Exchange v1.0.0
+4. Does this use case get a new policy which is defined by Daniela Wuensch and documented in the CX-0152?
+5. Data Models are unsufficiently described just with mandatory and optional. I find it hard to implement a data model without any of the relevant files. To say use the IDTA data model but make it optional is a very optimistic approach that this is going to work.
+6. Please be aware of all the questions they are going to ask you once you are creating the Pull request on the main branch of the standardization. See here e.g. https://github.com/catenax-eV/product-standardization-prod/pull/594 
+I was also involved in the ECU Standard which you can find here: https://github.com/catenax-eV/product-standardization-prod/blob/R26.06-release-bundle/standards/CX-0161-ECUCryptoMaterial/CX-0161-ECUCryptoMaterial.md 
+We have received quite good feedback on it and maybe it can help as a guideline as well.
