@@ -16,10 +16,10 @@ Only the Supplier "Nameplate" submodel is mandatory. It MUST be provided by ever
 The obligation levels defined in Sections 3 to 6 (Mandatory or Optional) refer to attributes within a submodel. They apply only once the exchange of the respective submodel has been agreed between the parties. An attribute classified as mandatory within an optional submodel is therefore only mandatory if that submodel is provided. 
 
 ## FOR WHOM IS THE STANDARD DESIGNED
-This standard is intended for organizations supplying materials, components, or cells to battery producers.
+This standard is intended for organizations supplying materials, components, or cells to battery producers and for organizations receiving such information to create the Battery Passport.
 ### Data Providers
 Data Providers are actors in the battery value chain that supply Battery Passport-relevant information to other actors. A Data Provider may be any organization that holds and shares relevant data, regardless of its position in the value chain.
-It should be noted that the battery production supply chain may involve a wider range of supplier types than the three categories described above. Nevertheless, during the development of this standard, consideration was limited to these three roles, due to availability and interest of the participants.
+It should be noted that the battery production supply chain may involve a wider range of supplier types than the three categories described above.
   
 ### Data Consumers
 Data Consumers are actors in the battery value chain that request, receive, and use supplier information for Battery Passport creation, regulatory compliance, or any organization that requires Battery Passport-relevant data from another actor in the value chain.
@@ -33,6 +33,8 @@ Examples include:
 Battery Passports require information originating from multiple actors throughout the battery value chain. While battery producers remain responsible for creating and publishing Battery Passports, a substantial share of the underlying information originates from upstream suppliers. This standard establishes a mechanism for exchanging supplier-generated information through Catena-X Digital Twins and standardized semantic models.
 
 The objective is to:
+- Create a common understanding of which information is needed throughout the value chain to create Battery Passports 
+- Define standardized data models to reduce complexity, redundancy and facilitate implementation throughout the whole value chain
 - Reduce manual reporting efforts
 - Improve interoperability across the value chain
 - Protecting business confidentiality via controlled data access
@@ -70,7 +72,6 @@ The standard is **not intended to be applied** for:
 
 - Publishing Battery Passports.
 - Publishing Digital Product Passports.
-- Battery producer to OEM data exchange.
 - Exchange with non-Catena-X ecosystems.
 - Provisioning of downstream Battery Passport information.
 - Dynamic product condition information occurring after handover to the battery producer.
@@ -139,10 +140,9 @@ The Data Provider:
 A Data Consumer is any actor in the battery value chain that receives Battery Passport-relevant data from another actor and uses it for passport generation, compliance, or related business processes. The Data Consumer may also act as a Data Provider in other exchanges.
 
 The Data Consumer:
-- MUST retrieve information through Catena-X compatible interfaces.
+- MUST retrieve information through Catena-X compatible interfaces (Catena-X Standards which need to be followed, like CX-0002, CX-0018, CX-0151, CX-0152).
 - MAY combine information from multiple suppliers.
 - MAY enrich supplier information with additional data.
-- REMAINS RESPONSIBLE for Battery Passport creation and publication.
 ---
 
 # 3 PRINCIPLES FOR DATA OBLIGATION DEFINITION
