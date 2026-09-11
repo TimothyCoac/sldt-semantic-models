@@ -123,7 +123,16 @@ The example in the [Base standard](./CX-0160-BatteryPassport-base.md) can be fol
 
 For terminology refer to the [Base standard](./CX-0160-BatteryPassport-base.md) and to the glossary: https://catenax-ev.github.io/glossary.
 
-# 2 ROLES AND RESPONSIBILITIES
+### 1.6 DIGITAL TWINS AND SPECIFIC ASSET IDs
+For generally relevant specific asset IDs, the Policy Constraints the [Base standard](./CX-0160-BatteryPassport-base.md) MUST be followed.
+
+### 1.7 POLICY CONSTRAINTS FOR DATA EXCHANGE
+
+For Policies, the Policy Constraints in the [Base standard](./CX-0160-BatteryPassport-base.md) MUST be followed.
+
+# 2 Roles, Responsibilities and Process Description
+
+This chapter specifies the process for providing Battery Passport-relevant data from a Data Provider to a Data Consumer within the Catena-X Dataspace.
 
 ## 2.1 Data Provider
 
@@ -133,7 +142,6 @@ The Data Provider:
 - MUST ensure accuracy and completeness of provided information.
 - SHOULD update information when significant product changes occur.
 - MAY provide optional information when contractually agreed.
----
 
 ## 2.2 Data Consumer
 
@@ -143,7 +151,36 @@ The Data Consumer:
 - MUST retrieve information through Catena-X compatible interfaces (Catena-X Standards which need to be followed, like CX-0002, CX-0018, CX-0151, CX-0152).
 - MAY combine information from multiple suppliers.
 - MAY enrich supplier information with additional data.
----
+
+## 2.3 PROCESS REPRESENTATION
+
+This process applies where Battery Passport-relevant information originates from a supplier and is required by another actor in the battery value chain for the creation, maintenance, or provision of Battery Passport information.
+
+The Data Provider makes relevant data available to the Data Consumer using the semantic models and exchange mechanisms defined by this standard. The Data Consumer retrieves and processes the provided information and may combine it with information obtained from other Data Providers and from its own systems.
+
+### DATA PROVIDER'S RESPONSIBILITIES
+
+The data provider MUST create the assets and digital twins as described in Chapter 1 [1.6 DIGITAL TWINS AND SPECIFIC ASSET IDs](###16-digital-twins-and-specific-asset-ids) and [5 APPLICATION PROGRAMMING INTERFACES](#5-application-programming-interfaces) in order to provide battery passport information to the data consumer.
+The aspect models for each battery MUST be created in accordance with [chapter 4](#4-semantic-models).
+
+The data provider SHOULD make the digital twins available to the data consumer in a timely manner after production of the battery.
+The data provider and data consumer MAY agree on any other point in time.
+
+### DATA CONSUMER'S RESPONSIBILITIES
+
+The data consumer MUST use the Application Programming Interfaces as described in [chapter 4](#4-application-programming-interfaces) to retrieve battery passport information from the data provider.
+
+The data consumer can create the assets and digital twins as described in chapters [2.1.1 DIGITAL TWINS AND SPECIFIC ASSET IDs](#211-digital-twins-and-specific-asset-ids) and [5 APPLICATION PROGRAMMING INTERFACES](#5-application-programming-interfaces) to provide the battery passport to other participants within the Catena-X dataspace.
+
+The data consumer needs to provide the battery passport to external stakeholders as required by regulation.
+
+## 2.4 REQUESTING BATTERY PASSPORT DATA
+
+See the [Base standard](./CX-0160-BatteryPassport-base.md) for the requesting of Battery Passport Data .
+
+The data provider SHOULD implement notifications.
+The data consumer MAY implement notifications.
+
 
 # 3 PRINCIPLES FOR DATA OBLIGATION DEFINITION
 
@@ -207,7 +244,6 @@ Data submission obligations depend on the supplier’s role. The table below pro
 | Material Composition          | HazardousSubstances — hazardousSubstanceLocation                            | optional              | optional                                 | optional                     | optional                      | optional                              | Optional, consistent with the corresponding attribute in the original Joint Battery Passport Model between Catena-X and IDTA                                                                                                                                                                                               |
 | Material Composition          | Location structure (ComponentName, ComponentId)                             | mandatory             | optional                                 | optional                     | optional                      | optional                              | Applicable for battery manufacturers only.                         
 
----
 ## 3.3 Criterion 3: Data Ownership
 Information SHALL only be mandatory when the supplier is the authoritative source of the information.
 Examples of supplier-owned information:
@@ -220,95 +256,96 @@ Examples of information not owned by suppliers:
 - Battery-level assessments
 - Vehicle-specific information
 - Post-production product condition information
----
 
-# 4 SEMANTIC MODELS
-_This section is normative_
-The following semantic models are supported by this standard.
-## 4.1 Supplier Nameplate
-Supplier Nameplate contains general identification information about the supplied product and supplier.
-### Mandatory
-- URIOfTheProduct
-- ManufacturerIdentifier
-- ManufacturerName
-### Conditional Mandatory
-- EUDeclarationOfConformity
-- SerialNumber
-- DateOfManufacture
-- LifeCycleStage
-### Optional
-- DateOfPuttingIntoService
-- OperatorIdentifier
-- AddressInformation
-- Markings
-- ResultsOfTestReportsProvingCompliance
-- UniqueFacilityIdentifier
----
-## 4.2 Supplier Handover Documentation
-Supplier Handover Documentation contains documents exchanged together with supplier data.
-### Mandatory
-- Documents (when documents are available)
-### Optional
-- Additional supporting documentation
----
-## 4.3 Carbon Footprint
-The Carbon Footprint model provides Product Carbon Footprint information for supplied products.
-### Mandatory
-- PcfCalculationMethods
-- PcfCo2eq
-- ReferenceImpactUnitForCalculation
-- QuantityOfMeasureForCalculation
-### Optional
-- LifeCyclePhases
-- PerformanceClass
-- WebLinkToPublicCarbonFootprintStudy
----
-## 4.4 Supplier Circularity
-Supplier Circularity contains information related to circular economy requirements.
-### Mandatory
-- RenewableContent
-### Conditional Mandatory
-- RecycledContentInformation when recycled content or critical raw materials are present.
-### Optional
-- DismantlingAndRemovalInformation
-- SparePartSources
-- SafetyMeasures
+## 4 SEMANTIC MODELS
 
-- EndOfLifeInformation
----
-## 4.5 Material Composition
-Material Composition contains information about materials, substances, and battery chemistry where applicable.
-### Mandatory for all supplier categories
-- Material Identifier (e.g. CAS Number)
-- Material Name
-- Critical Raw Material Indicato
-- Hazardous Substance Name
-- Hazardous Substance Identifier
- 
-### Mandatory for Cell Producers
-- BatteryChemistry.ShortName
-- BatteryChemistry.ClearName
-### Optional
-- Material Mass
-- Material Location
-- Hazardous Substance Class
-- Hazardous Substance Concentration
-- Hazardous Substance Impact
-- Hazardous Substance Location
-- Component Structure Information
----
-# 5 ROLE-SPECIFIC OBLIGATION PRINCIPLE
-The final obligation matrix SHALL be maintained separately and classify all data elements for the following supplier roles:
-- Material Supplier
-- Component Supplier
-- Cell Producer
-Each attribute SHALL be assigned one of the following obligation levels:
-- Mandatory
-- Conditional Mandatory
-- Optional
-- Not Applicable
+> *This section is normative*
 
-The obligation matrix SHALL serve as the normative reference for determining supplier-specific reporting obligations.
- 
-469
-This approach allows alignment with existing Battery Passport semantic models while ensuring that supplier obligations remain limited to information that is relevant, applicable, and owned by the supplier.
+For a list of semantic models relevant for the use case consider the  [Base standard](./CX-0160-BatteryPassport-base.md).
+
+### Required Models
+
+The Digital Nameplate data model (IDTA-02035-1) MUST be provided together with one or more optional submodels. The selection of the applicable optional submodel(s) SHALL be agreed bilaterally between the Data Provider and the Data Consumer.
+
+The Digital Nameplate is intended to provide a common, industry-independent information basis for the identification and description of an asset. This approach enables the Digital Nameplate information to be used within the IDTA framework, where no industry-specific core information model comparable to the Catena-X industry core is defined.
+
+All data models Handover Documentation, Technical Data, Material Composition, Circularity, Carbon Footprint for Battery Passport MAY be provided, and subject to bilateral discussions
+
+The following semantic models MUST be provided on Type Level:
+
+- Digital Battery Passport - Part 2: Handover Documentation (IDTA-02035-2)
+- Digital Battery Passport - Part 4: Technical Data (IDTA-02035-4)
+- Digital Battery Passport - Part 6: Material Composition (IDTA-02035-6)
+- Digital Battery Passport - Part 7: Circularity (IDTA-02035-7)
+
+The following semantic models MUST be provided on Instance Level:
+
+- Digital Battery Passport - Part 1: Digital Nameplate (IDTA-02035-1)
+- Digital Battery Passport - Part 3: Carbon Footprint for Battery Passport (IDTA-02035-3) - as soon as delegation act for PCF calculation for batteries is available
+
+> [!Note]
+> Although the semantic models are identical, the data itself cannot be used as a direct copy by the party responsible for composing the battery passport: it is merely input data used to compose the complete battery passport.
+>
+>- a) update with their own information (example: white labelling)
+>- b) add information that cannot be provided by the supplier (example: operatorID)
+>- c) add or update dynamic data (Product Condition IDTA-02035-5)
+>
+> and
+>
+>- d) add other missing or incomplete data points
+>- e) re-calculate or extending Carbon Footprint data: depending on the calculation method additional values need to be considered, for example data related to logistics
+>- f) add and update instance related documents in Handover Documentation (example: information on accidents)
+
+For further details the [Base standard](./CX-0160-BatteryPassport-base.md) MUST be considered.
+
+## 5 APPLICATION PROGRAMMING INTERFACES
+
+> *This section is normative*
+
+### 5.1 APIs ASSOCIATED WITH DIGITAL TWINS
+
+This standard completely and solely builds upon the standard [CX-0002](https://catenax-ev.github.io/docs/next/standards/CX-0002-DigitalTwinsInCatenaX) Digital Twins in Catena-X.
+
+For more details consider the [Base standard](./CX-0160-BatteryPassport-base.md).
+
+### 5.2 NOTIFICATIONS
+
+Implementing the Notification API of the Base standard is RECOMMENDED for the data provider; the data consumer MAY implement it.
+
+For more details consider the [Base standard](./CX-0160-BatteryPassport-base.md).
+
+## 6 REFERENCES
+
+### 6.1 NORMATIVE REFERENCES
+
+> *This section is normative*
+
+- CX-0002 Digital Twins in Catena-X v2.4.0
+- CX-0018 Dataspace Connectivity v4.2
+- CX-0126 Industry Core: PartType 2.1.1
+- CX-0127 Industry Core: Part Instance 2.0.2
+- CX-0151 Industry Core: Basics v1.0.0
+- CX-0152 Policy Constraints for Data Exchange v1.0.0
+
+### 6.2 NON-NORMATIVE REFERENCES
+
+> *This section is non-normative*
+
+- [DIN DKE SPEC 99100:2025-02](https://www.dinmedia.de/en/technical-rule/din-dke-spec-99100/385692321)
+- [Batterypass Semantic Models: Aspect Models](https://github.com/admin-shell-io/smt-semantic-models/releases/tag/V1.1)
+- [Batterypass Semantic Models: Submodel Template Specifications](https://github.com/admin-shell-io/submodel-templates/tree/main/published/Digital%20Battery%20Passport)
+- [Digital Battery Passport: Use Case Guideline of the Asset Administraion Shell](https://industrialdigitaltwin.org/wp-content/uploads/2026/02/IDTA_Catena-X_Guideline_Digital_Battery_Passport.pdf), Guideline, Feb. 2026.
+- EN 18216:2026: Digital product passport - Data exchange protocols
+- EN 18219:2026: Digital product passport - Unique identifiers
+- EN 18220:2026: Digital product passport - Data Carriers
+- EN 18221:2026: Digital product passport - Data storage, archiving, and data persistence
+- EN 18222:2026: Digital Product Passport - Application Programming Interfaces (APIs) for the product passport lifecycle management and searchability
+- EN 18223:2026: Digital Product Passport - System interoperability
+- prEN 18239:2025: Digital Product Passport - Access rights management, information system security, and business confidentiality
+- prEN 18246:2025: Digital product passport - Data authentication, reliability and integrity
+- [Regulation (EU) 2023/1542 of the European Parliament and of the Council of 12 July 2023 concerning batteries and waste batteries, amending Directive 2008/98/EC and Regulation (EU) 2019/1020 and repealing Directive 2006/66/EC](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32023R1542) - referenced as "Battery Regulation".
+- [Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products, amending Directive (EU) 2020/1828 and Regulation (EU) 2023/1542 and repealing Directive 2009/125/EC (Text with EEA relevance)](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02024R1781-20240628) - referenced as "Ecodesign for Sustainable Products Regulation" or "ESPR".
+
+### 6.3 REFERENCE IMPLEMENTATIONS
+
+There is currently no actively maintained reference application.
