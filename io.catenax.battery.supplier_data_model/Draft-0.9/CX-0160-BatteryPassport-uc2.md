@@ -170,7 +170,7 @@ The data provider and data consumer MAY agree on any other point in time.
 
 The data consumer MUST use the Application Programming Interfaces as described in [chapter 5](#5-application-programming-interfaces) to retrieve battery passport information from the data provider.
 
-The data consumer can create the assets and digital twins as described in chapters [2.1.1 DIGITAL TWINS AND SPECIFIC ASSET IDs](#211-digital-twins-and-specific-asset-ids) and [5 APPLICATION PROGRAMMING INTERFACES](#5-application-programming-interfaces) to provide the battery passport to other participants within the Catena-X dataspace.
+The data consumer can create the assets and digital twins as described in chapters [1.6 DIGITAL TWINS AND SPECIFIC ASSET IDs](#16-digital-twins-and-specific-asset-ids) and [5 APPLICATION PROGRAMMING INTERFACES](#5-application-programming-interfaces) to provide the battery passport to other participants within the Catena-X dataspace.
 
 The data consumer needs to provide the battery passport to external stakeholders as required by regulation.
 
