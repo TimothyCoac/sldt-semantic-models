@@ -160,7 +160,7 @@ The Data Provider makes relevant data available to the Data Consumer using the s
 
 ### DATA PROVIDER'S RESPONSIBILITIES
 
-The data provider MUST create the assets and digital twins as described in Chapter 1 [1.6 DIGITAL TWINS AND SPECIFIC ASSET IDs](###16-digital-twins-and-specific-asset-ids) and [5 APPLICATION PROGRAMMING INTERFACES](#5-application-programming-interfaces) in order to provide battery passport information to the data consumer.
+The data provider MUST create the assets and digital twins as described in Chapter 1 [1.6 DIGITAL TWINS AND SPECIFIC ASSET IDs](#16-digital-twins-and-specific-asset-ids) and [5 APPLICATION PROGRAMMING INTERFACES](#5-application-programming-interfaces) in order to provide battery passport information to the data consumer.
 The aspect models for each battery MUST be created in accordance with [chapter 4](#4-semantic-models).
 
 The data provider SHOULD make the digital twins available to the data consumer in a timely manner after production of the battery.
